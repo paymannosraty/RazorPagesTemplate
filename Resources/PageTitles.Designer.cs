@@ -22,7 +22,7 @@ namespace Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class PageTitles {
+    public class PageTitles {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Resources.PageTitles", typeof(PageTitles).Assembly);
@@ -51,7 +51,7 @@ namespace Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
-        internal static string About {
+        public static string About {
             get {
                 return ResourceManager.GetString("About", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Access Denied.
         /// </summary>
-        internal static string AccessDenied {
+        public static string AccessDenied {
             get {
                 return ResourceManager.GetString("AccessDenied", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Admin Settings.
         /// </summary>
-        internal static string AdminSettings {
+        public static string AdminSettings {
             get {
                 return ResourceManager.GetString("AdminSettings", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Change Password.
         /// </summary>
-        internal static string ChangePassword {
+        public static string ChangePassword {
             get {
                 return ResourceManager.GetString("ChangePassword", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
-        internal static string Contact {
+        public static string Contact {
             get {
                 return ResourceManager.GetString("Contact", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Create Menu Item.
         /// </summary>
-        internal static string CreateMenuItem {
+        public static string CreateMenuItem {
             get {
                 return ResourceManager.GetString("CreateMenuItem", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Create Page.
         /// </summary>
-        internal static string CreatePage {
+        public static string CreatePage {
             get {
                 return ResourceManager.GetString("CreatePage", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Create Role.
         /// </summary>
-        internal static string CreateRole {
+        public static string CreateRole {
             get {
                 return ResourceManager.GetString("CreateRole", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Create User.
         /// </summary>
-        internal static string CreateUser {
+        public static string CreateUser {
             get {
                 return ResourceManager.GetString("CreateUser", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Deactivate Account.
         /// </summary>
-        internal static string DeactivateAccount {
+        public static string DeactivateAccount {
             get {
                 return ResourceManager.GetString("DeactivateAccount", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Delete Menu Item.
         /// </summary>
-        internal static string DeleteMenuItem {
+        public static string DeleteMenuItem {
             get {
                 return ResourceManager.GetString("DeleteMenuItem", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Delete Page.
         /// </summary>
-        internal static string DeletePage {
+        public static string DeletePage {
             get {
                 return ResourceManager.GetString("DeletePage", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Delete Role.
         /// </summary>
-        internal static string DeleteRole {
+        public static string DeleteRole {
             get {
                 return ResourceManager.GetString("DeleteRole", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Delete User.
         /// </summary>
-        internal static string DeleteUser {
+        public static string DeleteUser {
             get {
                 return ResourceManager.GetString("DeleteUser", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Page Not Found!.
         /// </summary>
-        internal static string Error404 {
+        public static string Error404 {
             get {
                 return ResourceManager.GetString("Error404", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Internal Server Error!.
         /// </summary>
-        internal static string Error500 {
+        public static string Error500 {
             get {
                 return ResourceManager.GetString("Error500", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to File Manager.
         /// </summary>
-        internal static string FileManager {
+        public static string FileManager {
             get {
                 return ResourceManager.GetString("FileManager", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
-        internal static string Index {
+        public static string Index {
             get {
                 return ResourceManager.GetString("Index", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
-        internal static string Login {
+        public static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Logout.
         /// </summary>
-        internal static string Logout {
+        public static string Logout {
             get {
                 return ResourceManager.GetString("Logout", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Menu Item Details.
         /// </summary>
-        internal static string MenuItemDetails {
+        public static string MenuItemDetails {
             get {
                 return ResourceManager.GetString("MenuItemDetails", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Menu Item Management.
         /// </summary>
-        internal static string MenuItemManagement {
+        public static string MenuItemManagement {
             get {
                 return ResourceManager.GetString("MenuItemManagement", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Page Details.
         /// </summary>
-        internal static string PageDetails {
+        public static string PageDetails {
             get {
                 return ResourceManager.GetString("PageDetails", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Page Management.
         /// </summary>
-        internal static string PageManagement {
+        public static string PageManagement {
             get {
                 return ResourceManager.GetString("PageManagement", resourceCulture);
             }
@@ -279,7 +279,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Profile.
         /// </summary>
-        internal static string Profile {
+        public static string Profile {
             get {
                 return ResourceManager.GetString("Profile", resourceCulture);
             }
@@ -288,7 +288,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
-        internal static string Register {
+        public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
             }
@@ -297,7 +297,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Role Details.
         /// </summary>
-        internal static string RoleDetails {
+        public static string RoleDetails {
             get {
                 return ResourceManager.GetString("RoleDetails", resourceCulture);
             }
@@ -306,7 +306,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Role Management.
         /// </summary>
-        internal static string RoleManagement {
+        public static string RoleManagement {
             get {
                 return ResourceManager.GetString("RoleManagement", resourceCulture);
             }
@@ -315,7 +315,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Terminate Account.
         /// </summary>
-        internal static string TerminateAccount {
+        public static string TerminateAccount {
             get {
                 return ResourceManager.GetString("TerminateAccount", resourceCulture);
             }
@@ -324,7 +324,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Unexpected Error!.
         /// </summary>
-        internal static string UnexpectedError {
+        public static string UnexpectedError {
             get {
                 return ResourceManager.GetString("UnexpectedError", resourceCulture);
             }
@@ -333,7 +333,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Update Menu Item.
         /// </summary>
-        internal static string UpdateMenuItem {
+        public static string UpdateMenuItem {
             get {
                 return ResourceManager.GetString("UpdateMenuItem", resourceCulture);
             }
@@ -342,7 +342,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Update Page.
         /// </summary>
-        internal static string UpdatePage {
+        public static string UpdatePage {
             get {
                 return ResourceManager.GetString("UpdatePage", resourceCulture);
             }
@@ -351,7 +351,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Update Profile.
         /// </summary>
-        internal static string UpdateProfile {
+        public static string UpdateProfile {
             get {
                 return ResourceManager.GetString("UpdateProfile", resourceCulture);
             }
@@ -360,7 +360,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Update Role.
         /// </summary>
-        internal static string UpdateRole {
+        public static string UpdateRole {
             get {
                 return ResourceManager.GetString("UpdateRole", resourceCulture);
             }
@@ -369,7 +369,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Update User.
         /// </summary>
-        internal static string UpdateUser {
+        public static string UpdateUser {
             get {
                 return ResourceManager.GetString("UpdateUser", resourceCulture);
             }
@@ -378,7 +378,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to User Details.
         /// </summary>
-        internal static string UserDetails {
+        public static string UserDetails {
             get {
                 return ResourceManager.GetString("UserDetails", resourceCulture);
             }
@@ -387,7 +387,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to User Management.
         /// </summary>
-        internal static string UserManagement {
+        public static string UserManagement {
             get {
                 return ResourceManager.GetString("UserManagement", resourceCulture);
             }
@@ -396,7 +396,7 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to User Settings.
         /// </summary>
-        internal static string UserSettings {
+        public static string UserSettings {
             get {
                 return ResourceManager.GetString("UserSettings", resourceCulture);
             }

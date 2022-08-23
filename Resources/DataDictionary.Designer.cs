@@ -925,7 +925,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dariush Tasdighi.
+        ///   Looks up a localized string similar to Payman Nosraty.
         /// </summary>
         public static string SiteAuthor {
             get {
@@ -934,7 +934,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Iranian Experts.
+        ///   Looks up a localized string similar to CV.
         /// </summary>
         public static string SiteTitle {
             get {

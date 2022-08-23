@@ -13,9 +13,4 @@
     <ProjectReference Include="..\ViewModels\ViewModels.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Shared\Layouts\Ltr\" />
-    <Folder Include="Pages\Shared\Layouts\Rtl\" />
-  </ItemGroup>
-
 </Project>

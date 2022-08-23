@@ -25,6 +25,10 @@
 		{
 			"library": "tinymce@6.1.2",
 			"destination": "wwwroot/lib/tinymce/"
+		},
+		{
+			"library": "flag-icon-css@6.6.4",
+			"destination": "wwwroot/lib/flag-icon-css/"
 		}
 	]
 }
