@@ -23,6 +23,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
+app.UseMiddleware<Infrastructure.Middleares.CultureCookieHandlingMiddleware>();
+
 app.UseRouting();
 
 app.UseAuthentication();

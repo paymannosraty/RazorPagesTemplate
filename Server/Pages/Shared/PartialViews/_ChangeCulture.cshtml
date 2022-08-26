@@ -1,0 +1,23 @@
+﻿@{
+	var currentCultureName =
+		System.Threading.Thread
+		.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+}
+
+<span class="d-flex">
+	@if (currentCultureName != "fa")
+	{
+		<a href="/ChangeCulture?name=fa" class="nav-link text-dark">
+			فارسی
+			<span class="flag-icon flag-icon-ir"></span>
+		</a>
+	}
+
+	@if (currentCultureName != "en")
+	{
+		<a href="/ChangeCulture?name=en" class="nav-link text-dark">
+			English
+			<span class="flag-icon flag-icon-en"></span>
+		</a>
+	}
+</span>
