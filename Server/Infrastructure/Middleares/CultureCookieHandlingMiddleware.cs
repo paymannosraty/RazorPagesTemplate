@@ -2,6 +2,7 @@
 {
 	public class CultureCookieHandlingMiddleware
 	{
+		#region Static members
 		public readonly static string CookieName = "Culture.Cookie";
 
 		public static void SetCulture(string cultureName)
@@ -40,13 +41,14 @@
 					.Append(key: CookieName, value: cultureName, options: cookieOptions);
 			}
 		}
+		#endregion /Static members
 
 		public CultureCookieHandlingMiddleware(RequestDelegate next)
 		{
 			Next = next;
 		}
 
-		private RequestDelegate Next { get; set; }
+		private RequestDelegate Next { get; }
 
 		public async Task InvokeAsync(HttpContext httpContext)
 		{
