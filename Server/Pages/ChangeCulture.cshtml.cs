@@ -1,56 +1,55 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace Server.Pages
 {
 	public class ChangeCultureModel : Infrastructure.BasePageModel
 	{
-		public ChangeCultureModel()
+		public ChangeCultureModel(IOptions<RequestLocalizationOptions>? requestLocalizationOptions)
 		{
+			RequestLocalizationOptions = requestLocalizationOptions?.Value;
 		}
 
-		public IActionResult OnGet(string name)
+		private RequestLocalizationOptions? RequestLocalizationOptions { get; }
+
+		public IActionResult OnGet(string? cultureName)
 		{
 			var typeHeader =
 				HttpContext.Request.GetTypedHeaders();
 
 			var httpReferer =
-				typeHeader.Referer.AbsoluteUri;
+				typeHeader?.Referer?.AbsoluteUri;
 
 			if (string.IsNullOrEmpty(httpReferer))
 			{
 				return RedirectToPage(pageName: "/Index");
 			}
 
-			string defaultCulture = "fa";
+			var defaultCulture =
+				RequestLocalizationOptions?
+				.DefaultRequestCulture.UICulture.Name;
 
-			if (string.IsNullOrEmpty(name))
+			var supportedCultures =
+				RequestLocalizationOptions?
+				.SupportedCultures?
+				.Select(current => current.Name)
+				.ToList();
+
+			if (string.IsNullOrEmpty(cultureName))
 			{
-				name = defaultCulture;
+				cultureName = defaultCulture;
 			}
 
-			name =
-				name.Replace(" ", string.Empty)
-				.ToLower();
-
-			switch (name)
+			if (supportedCultures?.Contains(item: cultureName!) == false)
 			{
-				case "fa":
-				case "en":
-					{
-						break;
-					}
-				default:
-					{
-						name = defaultCulture;
-						break;
-					}
+				cultureName = defaultCulture;
 			}
 
-			Infrastructure.Middleares.CultureCookieHandlingMiddleware
-				.SetCulture(cultureName: name);
+			Infrastructure.Middleares.CultureCookieHandlerMiddleware
+				.SetCulture(cultureName: cultureName);
 
-			Infrastructure.Middleares.CultureCookieHandlingMiddleware
-				.CreateCookie(httpContext: HttpContext, cultureName: name);
+			Infrastructure.Middleares.CultureCookieHandlerMiddleware
+				.CreateCookie(httpContext: HttpContext, cultureName: cultureName!);
 
 			return Redirect(httpReferer);
 		}

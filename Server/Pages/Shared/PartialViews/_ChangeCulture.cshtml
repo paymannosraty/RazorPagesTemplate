@@ -1,23 +1,34 @@
-﻿@{
+﻿@using Microsoft.Extensions.Options
+@inject IOptions<RequestLocalizationOptions>? requestLocalizationOptions
+
+@{
+
+	var supportedUICultures =
+			requestLocalizationOptions?.Value.SupportedUICultures;
+
+	if (supportedUICultures == null ||
+		supportedUICultures.Count <= 1 ||
+		requestLocalizationOptions == null ||
+		requestLocalizationOptions.Value == null
+		)
+	{
+		return;
+	}
+
 	var currentCultureName =
 		System.Threading.Thread
 		.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
 }
 
 <span class="d-flex">
-	@if (currentCultureName != "fa")
+	@foreach (var item in supportedUICultures!)
 	{
-		<a href="/ChangeCulture?name=fa" class="nav-link text-dark">
-			فارسی
-			<span class="fi fi-ir"></span>
-		</a>
-	}
+		var country = item.Name[3..].ToLower();
+		var language = item.NativeName[..(item.NativeName.IndexOf('(') - 1)];
 
-	@if (currentCultureName != "en")
-	{
-		<a href="/ChangeCulture?name=en" class="nav-link text-dark">
-			English
-			<span class="fi fi-us"></span>
+		<a href="/ChangeCulture/@(item.Name)" class="nav-link text-dark">
+			@(language)
+			<span class="fi fi-@(country)"></span>
 		</a>
 	}
 </span>
