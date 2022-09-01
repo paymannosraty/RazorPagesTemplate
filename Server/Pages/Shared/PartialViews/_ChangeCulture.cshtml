@@ -1,15 +1,18 @@
 ﻿@using Microsoft.Extensions.Options
-@inject IOptions<RequestLocalizationOptions>? requestLocalizationOptions
+@inject IOptions<Infrastructure.Settings.ApplicationSettings> applicationSettingsOptions
 
 @{
+	var applicationSettings = applicationSettingsOptions.Value;
 
 	var supportedUICultures =
-			requestLocalizationOptions?.Value.SupportedUICultures;
+			applicationSettings
+			.CultureSettings?
+			.SupportedCultureNames?
+			.ToList();
 
 	if (supportedUICultures == null ||
 		supportedUICultures.Count <= 1 ||
-		requestLocalizationOptions == null ||
-		requestLocalizationOptions.Value == null
+		applicationSettings == null
 		)
 	{
 		return;
@@ -21,12 +24,15 @@
 }
 
 <span class="d-flex">
-	@foreach (var item in supportedUICultures!)
+	@foreach (var supportedCultureName in supportedUICultures)
 	{
-		var country = item.Name[3..].ToLower();
-		var language = item.NativeName[..(item.NativeName.IndexOf('(') - 1)];
+		var supportedCulture = new System.Globalization.CultureInfo(name: supportedCultureName);
 
-		<a href="/ChangeCulture/@(item.Name)" class="nav-link text-dark">
+		var country = supportedCultureName[3..].ToLower();
+		
+		var language = supportedCulture.NativeName[..(supportedCulture.NativeName.IndexOf('(') - 1)];
+
+		<a href="/ChangeCulture/@(supportedCultureName)" class="nav-link text-dark">
 			@(language)
 			<span class="fi fi-@(country)"></span>
 		</a>

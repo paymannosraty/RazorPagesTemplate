@@ -5,21 +5,8 @@ var builder =
 
 builder.Services.AddRazorPages();
 
-builder.Services.Configure<RequestLocalizationOptions>(options =>
-{
-	var supportedCultures = new[]
-	{
-		new System.Globalization.CultureInfo("en-US"),
-		new System.Globalization.CultureInfo("fa-IR"),
-	};
-
-	options.SupportedCultures = supportedCultures;
-	options.SupportedUICultures = supportedCultures;
-
-	options.DefaultRequestCulture =
-		new Microsoft.AspNetCore.Localization
-		.RequestCulture(uiCulture: "fa-IR", culture: "fa-IR");
-});
+builder.Services.Configure<Infrastructure.Settings.ApplicationSettings>
+	(builder.Configuration.GetSection(Infrastructure.Settings.ApplicationSettings.KeyName));
 
 var app =
 	builder.Build();

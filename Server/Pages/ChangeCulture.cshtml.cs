@@ -5,12 +5,12 @@ namespace Server.Pages
 {
 	public class ChangeCultureModel : Infrastructure.BasePageModel
 	{
-		public ChangeCultureModel(IOptions<RequestLocalizationOptions>? requestLocalizationOptions)
+		public ChangeCultureModel(IOptions<Infrastructure.Settings.ApplicationSettings> applicationSettingsOptions)
 		{
-			RequestLocalizationOptions = requestLocalizationOptions?.Value;
+			ApplicationSettings = applicationSettingsOptions.Value;
 		}
 
-		private RequestLocalizationOptions? RequestLocalizationOptions { get; }
+		private Infrastructure.Settings.ApplicationSettings ApplicationSettings { get; }
 
 		public IActionResult OnGet(string? cultureName)
 		{
@@ -26,13 +26,14 @@ namespace Server.Pages
 			}
 
 			var defaultCulture =
-				RequestLocalizationOptions?
-				.DefaultRequestCulture.UICulture.Name;
+				ApplicationSettings
+				.CultureSettings?
+				.DefaultCutrueName;
 
 			var supportedCultures =
-				RequestLocalizationOptions?
-				.SupportedCultures?
-				.Select(current => current.Name)
+				ApplicationSettings
+				.CultureSettings?
+				.SupportedCultureNames?
 				.ToList();
 
 			if (string.IsNullOrEmpty(cultureName))

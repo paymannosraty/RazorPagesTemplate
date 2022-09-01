@@ -69,34 +69,31 @@ namespace Infrastructure.Middleares
 		#endregion /Static members
 
 		public CultureCookieHandlerMiddleware(RequestDelegate next,
-			IOptions<RequestLocalizationOptions>? requestLocalizationOptions)
+			IOptions<Settings.ApplicationSettings> applicationSettingsOptions)
 		{
 			Next = next;
-			RequestLocalizationOptions = requestLocalizationOptions?.Value;
+			ApplicationSettings = applicationSettingsOptions.Value;
 		}
 
 		private RequestDelegate Next { get; }
-		private RequestLocalizationOptions? RequestLocalizationOptions { get; }
+		private Settings.ApplicationSettings ApplicationSettings { get; }
 
 		public async Task InvokeAsync(HttpContext httpContext)
 		{
 			var defaultCulture =
-				RequestLocalizationOptions?
-				.DefaultRequestCulture.UICulture.Name;
+				ApplicationSettings
+				.CultureSettings?
+				.DefaultCutrueName;
 
 			var supportedCultures =
-				RequestLocalizationOptions?
-				.SupportedCultures?
-				.Select(current => current.Name)
-				.ToList();
+				ApplicationSettings
+				.CultureSettings?
+				.SupportedCultureNames;
 
 			var currentCulture =
 				GetCultureNameByCookie(httpContext: httpContext, supportedCultures: supportedCultures);
 
-			if (currentCulture == null)
-			{
-				currentCulture = defaultCulture;
-			}
+			currentCulture ??= defaultCulture;
 
 			SetCulture(cultureName: currentCulture);
 
