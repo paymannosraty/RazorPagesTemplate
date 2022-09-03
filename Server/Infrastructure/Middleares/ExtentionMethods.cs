@@ -10,5 +10,10 @@
 		{
 			return app.UseMiddleware<CultureCookieHandlerMiddleware>();
 		}
+
+		public static IApplicationBuilder UseGlobalException(this IApplicationBuilder app)
+		{
+			return app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+		}
 	}
 }

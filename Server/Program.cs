@@ -17,6 +17,8 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
+	app.UseGlobalException();
+
 	app.UseExceptionHandler("/Errors/Error");
 
 	// The default HSTS value is 30 days.

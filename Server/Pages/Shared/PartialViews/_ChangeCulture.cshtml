@@ -20,21 +20,27 @@
 
 	var currentCultureName =
 		System.Threading.Thread
-		.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+		.CurrentThread.CurrentUICulture.Name;
 }
 
 <span class="d-flex">
 	@foreach (var supportedCultureName in supportedUICultures)
 	{
-		var supportedCulture = new System.Globalization.CultureInfo(name: supportedCultureName);
+		var supportedCulture =
+		new System.Globalization.CultureInfo(name: supportedCultureName);
 
-		var country = supportedCultureName[3..].ToLower();
-		
-		var language = supportedCulture.NativeName[..(supportedCulture.NativeName.IndexOf('(') - 1)];
+		var country =
+		supportedCultureName[3..].ToLower();
 
-		<a href="/ChangeCulture/@(supportedCultureName)" class="nav-link text-dark">
-			@(language)
-			<span class="fi fi-@(country)"></span>
-		</a>
+		var language =
+		supportedCulture.NativeName[..(supportedCulture.NativeName.IndexOf('(') - 1)];
+
+		if (currentCultureName != supportedCultureName)
+		{
+			<a href="/ChangeCulture/@(supportedCultureName)" class="nav-link text-dark">
+				@(language)
+				<span class="fi fi-@(country)"></span>
+			</a>
+		}
 	}
 </span>

@@ -1,9 +1,9 @@
 namespace Server.Pages.Errors
 {
-	public class ErrorModel :
+	public class Error500Model :
 		Microsoft.AspNetCore.Mvc.RazorPages.PageModel
 	{
-		public ErrorModel() : base()
+		public Error500Model() : base()
 		{
 		}
 	}
