@@ -10,5 +10,6 @@
 
 		public CultureSettings CultureSettings { get; set; }
 
+		public string[]? ActivationKeys { get; set; }
 	}
 }

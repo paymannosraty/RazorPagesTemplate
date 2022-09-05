@@ -1,9 +1,7 @@
 ﻿@using Microsoft.Extensions.Options
-@inject IOptions<Infrastructure.Settings.ApplicationSettings> applicationSettingsOptions
+@inject Infrastructure.Settings.ApplicationSettings applicationSettings
 
 @{
-	var applicationSettings = applicationSettingsOptions.Value;
-
 	var supportedUICultures =
 			applicationSettings
 			.CultureSettings?
@@ -33,7 +31,7 @@
 		supportedCultureName[3..].ToLower();
 
 		var language =
-		supportedCulture.NativeName[..(supportedCulture.NativeName.IndexOf('(') - 1)];
+		supportedCulture.Parent.NativeName;
 
 		if (currentCultureName != supportedCultureName)
 		{

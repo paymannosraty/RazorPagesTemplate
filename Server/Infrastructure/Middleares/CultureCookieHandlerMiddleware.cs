@@ -69,10 +69,10 @@ namespace Infrastructure.Middleares
 		#endregion /Static members
 
 		public CultureCookieHandlerMiddleware(RequestDelegate next,
-			IOptions<Settings.ApplicationSettings> applicationSettingsOptions)
+			Settings.ApplicationSettings applicationSettings)
 		{
 			Next = next;
-			ApplicationSettings = applicationSettingsOptions.Value;
+			ApplicationSettings = applicationSettings;
 		}
 
 		private RequestDelegate Next { get; }

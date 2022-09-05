@@ -15,5 +15,10 @@
 		{
 			return app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 		}
+
+		public static IApplicationBuilder UseActivationKeys(this IApplicationBuilder app)
+		{
+			return app.UseMiddleware<ActivationKeysHandlerMiddleware>();
+		}
 	}
 }

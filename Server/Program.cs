@@ -1,12 +1,30 @@
 using Infrastructure.Middleares;
 
+var webApplicationOptions =
+	new WebApplicationOptions
+	{
+		EnvironmentName =
+			System.Diagnostics.Debugger.IsAttached ?
+			Environments.Development : Environments.Production,
+	};
+
 var builder =
-	WebApplication.CreateBuilder();
+	WebApplication.CreateBuilder(options: webApplicationOptions);
 
 builder.Services.AddRazorPages();
 
 builder.Services.Configure<Infrastructure.Settings.ApplicationSettings>
-	(builder.Configuration.GetSection(Infrastructure.Settings.ApplicationSettings.KeyName));
+	(builder.Configuration.GetSection(Infrastructure.Settings.ApplicationSettings.KeyName))
+	.AddSingleton
+	(implementationFactory: serviceType =>
+	{
+		var result =
+			serviceType.GetRequiredService
+			<Microsoft.Extensions.Options.IOptions
+			<Infrastructure.Settings.ApplicationSettings>>().Value;
+
+		return result;
+	});
 
 var app =
 	builder.Build();
@@ -30,13 +48,11 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
+app.UseActivationKeys();
+
 app.UseCultureCookie();
 
 app.UseRouting();
-
-app.UseAuthentication();
-
-app.UseAuthorization();
 
 app.MapRazorPages();
 

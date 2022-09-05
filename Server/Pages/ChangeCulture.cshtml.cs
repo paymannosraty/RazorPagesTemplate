@@ -5,9 +5,9 @@ namespace Server.Pages
 {
 	public class ChangeCultureModel : Infrastructure.BasePageModel
 	{
-		public ChangeCultureModel(IOptions<Infrastructure.Settings.ApplicationSettings> applicationSettingsOptions)
+		public ChangeCultureModel(Infrastructure.Settings.ApplicationSettings applicationSettings)
 		{
-			ApplicationSettings = applicationSettingsOptions.Value;
+			ApplicationSettings = applicationSettings;
 		}
 
 		private Infrastructure.Settings.ApplicationSettings ApplicationSettings { get; }
