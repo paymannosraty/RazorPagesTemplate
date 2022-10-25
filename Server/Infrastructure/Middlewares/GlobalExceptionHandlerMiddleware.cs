@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Middleares
+﻿namespace Infrastructure.Middlewares
 {
 	public class GlobalExceptionHandlerMiddleware
 	{

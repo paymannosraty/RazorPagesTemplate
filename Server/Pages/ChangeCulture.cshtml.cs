@@ -46,10 +46,10 @@ namespace Server.Pages
 				cultureName = defaultCulture;
 			}
 
-			Infrastructure.Middleares.CultureCookieHandlerMiddleware
+			Infrastructure.Middlewares.CultureCookieHandlerMiddleware
 				.SetCulture(cultureName: cultureName);
 
-			Infrastructure.Middleares.CultureCookieHandlerMiddleware
+			Infrastructure.Middlewares.CultureCookieHandlerMiddleware
 				.CreateCookie(httpContext: HttpContext, cultureName: cultureName!);
 
 			return Redirect(httpReferer);

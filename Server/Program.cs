@@ -1,4 +1,4 @@
-using Infrastructure.Middleares;
+using Infrastructure.Middlewares;
 
 var webApplicationOptions =
 	new WebApplicationOptions

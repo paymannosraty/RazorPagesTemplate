@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 
-namespace Infrastructure.Middleares
+namespace Infrastructure.Middlewares
 {
 	public class CultureCookieHandlerMiddleware
 	{
